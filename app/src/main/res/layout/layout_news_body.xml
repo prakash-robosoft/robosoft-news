@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_body_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/newsTitle"
+        style="@style/NewsTitleTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/newsDescription"
+        style="@style/NewsDescriptionTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_medium"
+        app:layout_constraintEnd_toEndOf="@+id/newsTitle"
+        app:layout_constraintStart_toStartOf="@+id/newsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/newsTitle" />
+
+    <Button
+        android:id="@+id/sourceButton"
+        style="@style/NewsSourceButtonRounded"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="@dimen/space_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newsDescription" />
+
+    <ImageButton
+        android:id="@+id/bookmarkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:contentDescription="@string/bookmark_image_description"
+        app:layout_constraintBottom_toBottomOf="@+id/sourceButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sourceButton"
+        app:srcCompat="@drawable/ic_bookmark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+def environmentProperties = new Properties()
+environmentProperties.load(new FileInputStream(rootProject.file("Config.properties")))
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "32.0.0"
+
+    defaultConfig {
+        applicationId "com.robosoft.news"
+        minSdkVersion 23
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            buildConfigField("String", "NEWS_API_KEY", environmentProperties.getProperty("DEV_NEWS_API_KEY"))
+            buildConfigField("String", "NEWS_API_BASE_URL", environmentProperties.getProperty("DEV_NEWS_API_BASE_URL"))
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "NEWS_API_BASE_URL", environmentProperties.getProperty("DEV_NEWS_API_BASE_URL"))
+
+        }
+    }
+
+    android.buildFeatures.dataBinding = true
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    api AppDeps.ktxCore
+    api AppDeps.kotlin
+    api AppDeps.appCompat
+    api AppDeps.material
+    api AppDeps.constraintLayout
+    api AppDeps.navigationFragment
+    api AppDeps.navigationUi
+
+    api LibDeps.koin
+    api LibDeps.koinCore
+    api LibDeps.retrofit
+    api LibDeps.okHttp
+    api LibDeps.gson
+    api LibDeps.gsonConverter
+    api LibDeps.httpLogging
+    api LibDeps.coroutinesCore
+    api LibDeps.coroutinesAndroid
+    api LibDeps.lifeCycleViewModel
+    api LibDeps.lifeCycleRuntime
+    api LibDeps.glide
+    api LibDeps.glideAnnotationProcessor
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+}

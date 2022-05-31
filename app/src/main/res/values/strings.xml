@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="news_image_description">News image</string>
+    <string name="bookmark_image_description">Bookmark image</string>
+    <string name="title_top_news_header">Top News</string>
+    <string name="title_popular_news_header">Popular News</string>
+    <string name="progress_bar_description">Progress bar</string>
+    <string name="bookmark_menu_title">Bookmark</string>
+    <string name="search_menu_title">search</string>
+
+</resources>

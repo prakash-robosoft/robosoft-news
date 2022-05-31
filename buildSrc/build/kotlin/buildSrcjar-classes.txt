@@ -1,0 +1,1 @@
+C:\Users\Prakash R\Documents\Projects\Assignment\News\buildSrc\build\classes\kotlin\main\AppDeps.class;C:\Users\Prakash R\Documents\Projects\Assignment\News\buildSrc\build\classes\kotlin\main\LibDeps.class;C:\Users\Prakash R\Documents\Projects\Assignment\News\buildSrc\build\classes\kotlin\main\Versions.class
